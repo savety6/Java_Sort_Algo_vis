@@ -17,9 +17,10 @@ public class VisualizerController {
 
         // Choose the sorting algorithm
         // algorithm = new BubbleSort(array, panel); // or new SelectionSort(array, panel);
-        algorithm = new SelectionSort(array, panel); // or new BubbleSort(array, panel);
-        
-        
+        algorithm = new SelectionSort(array, panel); // or new QuickSort(array, panel);
+        // algorithm = new QuickSort(array, panel); // or new BubbleSort(array, panel);
+
+
         // Start the sorting on a new thread so it doesn’t freeze the GUI
         new Thread(() -> algorithm.sort()).start();
     }
