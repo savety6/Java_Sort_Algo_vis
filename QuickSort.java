@@ -24,11 +24,21 @@ public class QuickSort extends SortingAlgorithm
 		int unsorted_end = end_index - 1;
 		while (unsorted_start < unsorted_end)
 		{
+			while (array[unsorted_start] < array[partition_index])
+			{
+				unsorted_start++;
+			}
+			while (array[unsorted_end] > array[partition_index])
+			{
+				unsorted_end--;
+			}
+
 			if (partition_index == unsorted_start)
 			{
 				int new_partition = unsorted_start + (unsorted_end - unsorted_start + 1) / 2;
 				swap(partition_index, new_partition);
 				partition_index = new_partition;
+				continue;
 			}
 
 			if (array[unsorted_start] > array[partition_index])
